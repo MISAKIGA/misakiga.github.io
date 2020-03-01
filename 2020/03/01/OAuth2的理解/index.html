@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://misakiga.github.io">
-  <title>Archives | MSGA-BLOG</title>
+  <title>OAuth2的理解 | MSGA-BLOG</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="ius">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MSGA-BLOG">
-<meta property="og:url" content="https://misakiga.github.io/archives/index.html">
+  <meta name="description" content="对 OAuth2 的理解OAuth2是一种授权机制，主要用来颁发令牌TOKEN. 首先解释一下各种名词：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OAuth2的理解">
+<meta property="og:url" content="https://misakiga.github.io/2020/03/01/OAuth2%E7%9A%84%E7%90%86%E8%A7%A3/index.html">
 <meta property="og:site_name" content="MSGA-BLOG">
-<meta property="og:description" content="ius">
+<meta property="og:description" content="对 OAuth2 的理解OAuth2是一种授权机制，主要用来颁发令牌TOKEN. 首先解释一下各种名词：">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-01T09:11:21.359Z">
+<meta property="article:modified_time" content="2020-03-01T09:19:10.584Z">
 <meta property="article:author" content="MISAKIGA">
 <meta name="twitter:card" content="summary">
   
@@ -201,97 +203,232 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-OAuth2的理解" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+    <h1 class="article-title" itemprop="name">
+      OAuth2的理解
+    </h1>
+  
+
+
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2020/03/01/OAuth2%E7%9A%84%E7%90%86%E8%A7%A3/" class="archive-article-date">
         <time datetime="2020-03-01T09:11:21.359Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
 </a>
 
-        </div>
-    	 
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/03/01/OAuth2%E7%9A%84%E7%90%86%E8%A7%A3/" target="_blank">OAuth2的理解</a>
   
-    </h1>
-  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">825字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">2分</span>
+    </span>
+  </span>
+</div>
 
 
-        <div class="article-info info-on-right">
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="对-OAuth2-的理解"><a href="#对-OAuth2-的理解" class="headerlink" title="对 OAuth2 的理解"></a>对 OAuth2 的理解</h1><p>OAuth2是一种授权机制，主要用来颁发令牌<strong>TOKEN</strong>.</p>
+<p>首先解释一下各种名词：</p>
+<a id="more"></a>
+<ul>
+<li>第三方</li>
+<li>用户</li>
+<li>认证服务器</li>
+<li>资源服务器</li>
+</ul>
+<p>假设我想去某网络购物平台买东西，选好想要的物品后到购物车进行结算，届时这个平台会让你选择一个支付方式，假设我选了支付宝，在这里，支付宝就是<code>第三方应用</code>。那么这个平台没有支付宝账号密码它 怎么进行 支付呢？这里就用到了oauth2的<code>授权模式</code>，平台会给支付宝发送一个请求获取授权码，这时会跳转到支付宝界面<code>认证服务器</code>叫用户登录授权。用户操作完成后，支付宝返回一个<code>令牌（TOKEN）</code>给平台，这样平台就可以拿这个令牌去访问你的支付宝钱包<code>资源服务器</code>进行付款。当然支付宝可能不是这样的流程，但是这样已经可以理解OAuth2的工作流程了。</p>
+<blockquote>
+<h5 id="OAuth2-的四种授权方式（authorization-grant）-参考-RFC-6749-文件-以适应各种互联网场景"><a href="#OAuth2-的四种授权方式（authorization-grant）-参考-RFC-6749-文件-以适应各种互联网场景" class="headerlink" title="OAuth2 的四种授权方式（authorization grant） 参考 RFC 6749 文件,以适应各种互联网场景"></a>OAuth2 的四种授权方式（authorization grant） 参考 <a href="https://tools.ietf.org/html/rfc6749" target="_blank" rel="noopener">RFC 6749</a> 文件,以适应各种互联网场景</h5></blockquote>
+<ol>
+<li>授权码(authorization code)<ul>
+<li>授权码（authorization code）方式，指的是第三方应用先申请一个授权码，然后再用该码获取令牌。</li>
+</ul>
+</li>
+<li>隐藏式(implicit)<ul>
+<li>有些 Web 应用是纯前端应用，没有后端。这时就不能用上面的方式了，必须将令牌储存在前端。RFC 6749 就规定了第二种方式，允许直接向前端颁发令牌。这种方式没有授权码这个中间步骤，所以称为（授权码）”隐藏式”（implicit）。</li>
+</ul>
+</li>
+<li>密码式(password)<ul>
+<li>如果你高度信任某个应用，RFC 6749 也允许用户把用户名和密码，直接告诉该应用。该应用就使用你的密码，申请令牌，这种方式称为”密码式”（password）。</li>
+</ul>
+</li>
+<li>客户端凭证 (client credentials)<ul>
+<li>最后一种方式是凭证式（client credentials），适用于没有前端的命令行应用，即在命令行下请求令牌。</li>
+</ul>
+</li>
+</ol>
+<p>不管哪一种授权方式，第三方应用申请令牌之前，都必须先到系统备案，说明自己的身份，然后会拿到两个身份识别码：客户端 ID（client ID）和客户端密钥（client secret）。这是为了防止令牌被滥用，没有备案过的第三方应用，是不会拿到令牌的。</p>
+<p>网站拿到令牌后，就可以向第三方资源服务器<code>API</code>去请求数据了。每个发到<code>API</code>的请求,都必须带有令牌。在请求头信息里加上一个<code>Authorization</code>字段，令牌 放在这个字段里面。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -H "Authorization: Bearer ACCESS_TOKEN" \</span><br><span class="line">"https://api.b.com"</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<h4 id="更新令牌"><a href="#更新令牌" class="headerlink" title="更新令牌"></a>更新令牌</h4></blockquote>
+<p>如果令牌有效期到了，在 走一遍上面的流程再申请令牌，比较麻烦。OAuth 2.0 允许用户自动更新令牌。</p>
+<p>具体方法，颁发令牌时，一次性颁发两个令牌，一个用户获取数据，另一个用于更新令牌（refresh token）。令牌到期前 ，用户使用 <code>refresh token</code>发送一个请求 ，去更新令牌。 <code>grant_type</code>参数为<code>refresh token</code> 表示要求更新令牌 。</p>
+<p><a href="http://www.ruanyifeng.com/blog/2019/04/github-oauth.html" target="_blank" rel="noopener">阮一峰博客Github OAuth 第三方 登录示例</a></p>
+
+    
+
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          MISAKIGA
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https:/misakiga.github.io/2020/03/01/OAuth2的理解/" title="OAuth2的理解" target="_blank">https:/misakiga.github.io/2020/03/01/OAuth2的理解/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
-          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
 
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://misakiga.github.io/2020/03/01/OAuth2%E7%9A%84%E7%90%86%E8%A7%A3/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/29/%E6%9C%AC%E7%AB%99%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E5%93%9F-%EF%BC%BEU%EF%BC%BE-%E3%83%8E-YO/" class="archive-article-date">
-        <time datetime="2020-02-29T11:46:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-29</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/02/29/%E6%9C%AC%E7%AB%99%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E5%93%9F-%EF%BC%BEU%EF%BC%BE-%E3%83%8E-YO/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">本站的第一篇博客哟(＾Ｕ＾)ノ~ＹＯ</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/02/29/%E6%9C%AC%E7%AB%99%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E5%93%9F-%EF%BC%BEU%EF%BC%BE-%E3%83%8E-YO/" target="_blank">本站的第一篇博客哟(＾Ｕ＾)ノ~ＹＯ</a>
-  
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
+
+
+
+
 
 
           </div>
@@ -332,8 +469,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
