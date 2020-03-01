@@ -6,21 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://misakiga.github.io">
-  <title>MSGA-BLOG</title>
+  <title>完成hexo的自动部署 | MSGA-BLOG</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    
-    <!-- <meta name="keywords" content="">
-    <meta name="description" content="ius"> -->
-  
-  <meta name="description" content="ius">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MSGA-BLOG">
-<meta property="og:url" content="https://misakiga.github.io/index.html">
+  <meta name="description" content="-– title: 完成hexo的自动部署 date: 2020-03-1 19:46:00 tags: 随笔 , hexo ，CI -– Github actions使用Github自带的actions功能实现hexo的自动部署，避免了频繁的hexo命令操作 ，也把源码push上去了，以后就不用担心数据丢失了。 123hexo g -d#现在只要用 git push origin master就">
+<meta property="og:type" content="article">
+<meta property="og:title" content="完成hexo的自动部署">
+<meta property="og:url" content="https://misakiga.github.io/2020/03/01/%E5%AE%8C%E6%88%90hexo%E7%9A%84%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/index.html">
 <meta property="og:site_name" content="MSGA-BLOG">
-<meta property="og:description" content="ius">
+<meta property="og:description" content="-– title: 完成hexo的自动部署 date: 2020-03-1 19:46:00 tags: 随笔 , hexo ，CI -– Github actions使用Github自带的actions功能实现hexo的自动部署，避免了频繁的hexo命令操作 ，也把源码push上去了，以后就不用担心数据丢失了。 123hexo g -d#现在只要用 git push origin master就">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-01T12:36:36.670Z">
+<meta property="article:modified_time" content="2020-03-01T12:36:15.640Z">
 <meta property="article:author" content="MISAKIGA">
 <meta name="twitter:card" content="summary">
   
@@ -205,25 +203,25 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-  
-    <article id="post-完成hexo的自动部署" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-完成hexo的自动部署" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/03/01/%E5%AE%8C%E6%88%90hexo%E7%9A%84%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/" target="_blank">完成hexo的自动部署</a>
-  
+    <h1 class="article-title" itemprop="name">
+      完成hexo的自动部署
     </h1>
   
 
 
   
   
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2020/03/01/%E5%AE%8C%E6%88%90hexo%E7%9A%84%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/" class="archive-article-date">
         <time datetime="2020-03-01T12:36:36.670Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
 </a>
@@ -231,6 +229,27 @@
   
   
     
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">336字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">1分</span>
+    </span>
+  </span>
+</div>
+
 
   
   </header>
@@ -255,6 +274,26 @@
     
 
     
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          MISAKIGA
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https:/misakiga.github.io/2020/03/01/完成hexo的自动部署/" title="完成hexo的自动部署" target="_blank">https:/misakiga.github.io/2020/03/01/完成hexo的自动部署/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
 
   </div>
   <div class="article-info article-info-index">
@@ -263,16 +302,76 @@
     
 
     
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/03/01/%E5%AE%8C%E6%88%90hexo%E7%9A%84%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/">展开全文 >></a>
-    </p>
+
     
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://misakiga.github.io/2020/03/01/%E5%AE%8C%E6%88%90hexo%E7%9A%84%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
 
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/01/OAuth2%E7%9A%84%E7%90%86%E8%A7%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">OAuth2的理解</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -293,179 +392,14 @@
 
 
 
-  
-    <article id="post-OAuth2的理解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/03/01/OAuth2%E7%9A%84%E7%90%86%E8%A7%A3/" target="_blank">OAuth2的理解</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/03/01/OAuth2%E7%9A%84%E7%90%86%E8%A7%A3/" class="archive-article-date">
-        <time datetime="2020-03-01T09:11:21.359Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>-–</p>
-<p>title: OAuth2的理解</p>
-<p>date: 2020-02-29 22:12:05</p>
-<p>tags: OAuth2 , 随笔，技术</p>
-<p>-–</p>
-<h1 id="对-OAuth2-的理解"><a href="#对-OAuth2-的理解" class="headerlink" title="对 OAuth2 的理解"></a>对 OAuth2 的理解</h1><p>OAuth2是一种授权机制，主要用来颁发令牌<strong>TOKEN</strong>.</p>
-<p>首先解释一下各种名词：</p>
-    
-    <a class="article-more-a" href="/2020/03/01/OAuth2%E7%9A%84%E7%90%86%E8%A7%A3/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/03/01/OAuth2%E7%9A%84%E7%90%86%E8%A7%A3/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
 
 
 
 
-  
-    <article id="post-本站的第一篇博客哟-＾U＾-ノ-YO" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/02/29/%E6%9C%AC%E7%AB%99%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E5%93%9F-%EF%BC%BEU%EF%BC%BE-%E3%83%8E-YO/" target="_blank">本站的第一篇博客哟(＾Ｕ＾)ノ~ＹＯ</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/02/29/%E6%9C%AC%E7%AB%99%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E5%93%9F-%EF%BC%BEU%EF%BC%BE-%E3%83%8E-YO/" class="archive-article-date">
-        <time datetime="2020-02-29T11:46:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-29</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>经过一番折腾，终于把这个github版免费博客搭起来了呢，本来还想着先用Java找个博客轮子，但是<br>在写的过程中出现了很多坑，而这些坑我又不想在别的地方放，所以就 先搭个博客用着先。装完发现，这玩意是用 <strong><em>Makedown</em></strong> 写文章的。。。</p>
-    
-    <a class="article-more-a" href="/2020/02/29/%E6%9C%AC%E7%AB%99%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E5%93%9F-%EF%BC%BEU%EF%BC%BE-%E3%83%8E-YO/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/02/29/%E6%9C%AC%E7%AB%99%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E5%93%9F-%EF%BC%BEU%EF%BC%BE-%E3%83%8E-YO/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
 
 
 
 
-  
-  
 
 
           </div>
@@ -505,8 +439,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
