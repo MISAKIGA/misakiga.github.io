@@ -225,7 +225,7 @@
   
   
 <a href="/2020/03/01/%E5%AE%8C%E6%88%90hexo%E7%9A%84%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/" class="archive-article-date">
-        <time datetime="2020-03-01T12:36:36.670Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
+        <time datetime="2020-03-01T11:46:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
 </a>
 
   
@@ -237,19 +237,10 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>-–</p>
-<p>title: 完成hexo的自动部署</p>
-<p>date: 2020-03-1 19:46:00</p>
-<p>tags: 随笔 , hexo ，CI</p>
-<p>-–</p>
-<h1 id="Github-actions"><a href="#Github-actions" class="headerlink" title="Github actions"></a>Github actions</h1><p>使用Github自带的actions功能实现hexo的自动部署，避免了频繁的hexo命令操作 ，也把源码push上去了，以后就不用担心数据丢失了。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br><span class="line"><span class="meta">#</span><span class="bash">现在只要用 git push origin master就可以完成整个部署。</span></span><br><span class="line"><span class="meta">#</span><span class="bash">简单操作步骤的同时也体验到了自动部署带来的好处。</span></span><br></pre></td></tr></table></figure>
-
-<p>GitHub 仓库点点击Action，新建一个 Action,搜索并引用Hexo action 模板。</p>
-<p>你也可以直接在自己的仓库根目录下创建 <code>you project/.github/workflows/hexo-actoin.yml</code>,文件代码如下：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">hexo-action</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#当仓库发起 push 命令时,运行此action</span></span><br><span class="line"><span class="attr">on:</span> <span class="string">[push]</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build:</span></span><br><span class="line">	<span class="comment">#运行ubuntu坏境，配置 类似 Dockerfile</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">	<span class="comment">#步骤</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Hexo</span> <span class="string">Action</span></span><br><span class="line">      <span class="attr">uses:</span> <span class="string">sma11black/hexo-action@v1.0.0</span></span><br><span class="line">      <span class="attr">with:</span></span><br><span class="line">        <span class="comment"># Github 用户名</span></span><br><span class="line">        <span class="attr">user_name:</span> <span class="string">misakiga</span> <span class="comment"># default is </span></span><br><span class="line">        <span class="comment"># Github 邮箱</span></span><br><span class="line">        <span class="attr">user_email:</span> <span class="string">youemail@email.com</span> <span class="comment"># default is </span></span><br><span class="line">        <span class="comment">#一般不建议直接填密码进去，所以选择使用token的方式访问。</span></span><br><span class="line">        <span class="comment">#获取token：在用户-&gt;Settings-&gt;Developer settings-&gt;Personal access tokens 下新建一个具有仓库修改权限的token，复制token。</span></span><br><span class="line">        <span class="comment">#这里的secrets取得值是仓库的secrets，所以要在仓库页面里的settings-&gt;Secrets添加一个刚刚复制的token，名称要匹配，这里用的是：ACTION_DEPLOY_KEY.</span></span><br><span class="line">        <span class="attr">deploy_key:</span> <span class="string">$&#123;&#123;secrets.ACTION_DEPLOY_KEY&#125;&#125;</span></span><br></pre></td></tr></table></figure>
-
-
+    <h1 id="Github-actions"><a href="#Github-actions" class="headerlink" title="Github actions"></a>Github actions</h1><p>使用Github自带的actions功能实现hexo的自动部署，避免了频繁的hexo命令操作 ，也把源码push上去了，以后就不用担心数据丢失了。</p>
+    
+    <a class="article-more-a" href="/2020/03/01/%E5%AE%8C%E6%88%90hexo%E7%9A%84%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/#more">more >></a>
+    
     
 
     
@@ -260,6 +251,25 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CI</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
 
     
@@ -302,7 +312,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/03/01/OAuth2%E7%9A%84%E7%90%86%E8%A7%A3/" target="_blank">OAuth2的理解</a>
+	  <a class="article-title" href="/2020/02/29/OAuth2%E7%9A%84%E7%90%86%E8%A7%A3/" target="_blank">OAuth2的理解</a>
   
     </h1>
   
@@ -310,8 +320,8 @@
 
   
   
-<a href="/2020/03/01/OAuth2%E7%9A%84%E7%90%86%E8%A7%A3/" class="archive-article-date">
-        <time datetime="2020-03-01T09:11:21.359Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
+<a href="/2020/02/29/OAuth2%E7%9A%84%E7%90%86%E8%A7%A3/" class="archive-article-date">
+        <time datetime="2020-02-29T14:12:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-29</time>
 </a>
 
   
@@ -323,15 +333,10 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>-–</p>
-<p>title: OAuth2的理解</p>
-<p>date: 2020-02-29 22:12:05</p>
-<p>tags: OAuth2 , 随笔，技术</p>
-<p>-–</p>
-<h1 id="对-OAuth2-的理解"><a href="#对-OAuth2-的理解" class="headerlink" title="对 OAuth2 的理解"></a>对 OAuth2 的理解</h1><p>OAuth2是一种授权机制，主要用来颁发令牌<strong>TOKEN</strong>.</p>
+    <h1 id="对-OAuth2-的理解"><a href="#对-OAuth2-的理解" class="headerlink" title="对 OAuth2 的理解"></a>对 OAuth2 的理解</h1><p>OAuth2是一种授权机制，主要用来颁发令牌<strong>TOKEN</strong>.</p>
 <p>首先解释一下各种名词：</p>
     
-    <a class="article-more-a" href="/2020/03/01/OAuth2%E7%9A%84%E7%90%86%E8%A7%A3/#more">more >></a>
+    <a class="article-more-a" href="/2020/02/29/OAuth2%E7%9A%84%E7%90%86%E8%A7%A3/#more">more >></a>
     
     
 
@@ -343,11 +348,30 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">OAuth2</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术博客</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2020/03/01/OAuth2%E7%9A%84%E7%90%86%E8%A7%A3/">展开全文 >></a>
+      <a class="article-more-a" href="/2020/02/29/OAuth2%E7%9A%84%E7%90%86%E8%A7%A3/">展开全文 >></a>
     </p>
     
 
@@ -595,6 +619,22 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">CI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">OAuth2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">技术博客</a>
               </li>
             
             <div class="clearfix"></div>
